@@ -7,18 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F854E9F229DF27360027A852 /* Diamond.swift in Sources */ = {isa = PBXBuildFile; fileRef = F854E9F129DF27360027A852 /* Diamond.swift */; };
 		F8D5B87329DD5B25001DE25C /* SetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D5B87229DD5B25001DE25C /* SetApp.swift */; };
-		F8D5B87529DD5B25001DE25C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D5B87429DD5B25001DE25C /* ContentView.swift */; };
+		F8D5B87529DD5B25001DE25C /* SetGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D5B87429DD5B25001DE25C /* SetGameView.swift */; };
 		F8D5B87729DD5B27001DE25C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8D5B87629DD5B27001DE25C /* Assets.xcassets */; };
 		F8D5B87A29DD5B27001DE25C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8D5B87929DD5B27001DE25C /* Preview Assets.xcassets */; };
+		F8D5B88129DD64DF001DE25C /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D5B88029DD64DF001DE25C /* AspectVGrid.swift */; };
+		F8D5B88329DD6582001DE25C /* SetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D5B88229DD6582001DE25C /* SetGame.swift */; };
+		F8D5B88529DD694E001DE25C /* ThemeOfSetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D5B88429DD694E001DE25C /* ThemeOfSetGame.swift */; };
+		F8D5B88729DD6C5B001DE25C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D5B88629DD6C5B001DE25C /* CardView.swift */; };
+		F8D5B88929DD735B001DE25C /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D5B88829DD735B001DE25C /* GameViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F8D5B86F29DD5B25001DE25C /* Set.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Set.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F854E9F129DF27360027A852 /* Diamond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diamond.swift; sourceTree = "<group>"; };
+		F8D5B86F29DD5B25001DE25C /* SetGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SetGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D5B87229DD5B25001DE25C /* SetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetApp.swift; sourceTree = "<group>"; };
-		F8D5B87429DD5B25001DE25C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F8D5B87429DD5B25001DE25C /* SetGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameView.swift; sourceTree = "<group>"; };
 		F8D5B87629DD5B27001DE25C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8D5B87929DD5B27001DE25C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F8D5B88029DD64DF001DE25C /* AspectVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGrid.swift; sourceTree = "<group>"; };
+		F8D5B88229DD6582001DE25C /* SetGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGame.swift; sourceTree = "<group>"; };
+		F8D5B88429DD694E001DE25C /* ThemeOfSetGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeOfSetGame.swift; sourceTree = "<group>"; };
+		F8D5B88629DD6C5B001DE25C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		F8D5B88829DD735B001DE25C /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,7 +47,7 @@
 		F8D5B86629DD5B25001DE25C = {
 			isa = PBXGroup;
 			children = (
-				F8D5B87129DD5B25001DE25C /* Set */,
+				F8D5B87129DD5B25001DE25C /* SetGame */,
 				F8D5B87029DD5B25001DE25C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,20 +55,26 @@
 		F8D5B87029DD5B25001DE25C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F8D5B86F29DD5B25001DE25C /* Set.app */,
+				F8D5B86F29DD5B25001DE25C /* SetGame.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F8D5B87129DD5B25001DE25C /* Set */ = {
+		F8D5B87129DD5B25001DE25C /* SetGame */ = {
 			isa = PBXGroup;
 			children = (
 				F8D5B87229DD5B25001DE25C /* SetApp.swift */,
-				F8D5B87429DD5B25001DE25C /* ContentView.swift */,
+				F8D5B87429DD5B25001DE25C /* SetGameView.swift */,
+				F8D5B88629DD6C5B001DE25C /* CardView.swift */,
+				F8D5B88029DD64DF001DE25C /* AspectVGrid.swift */,
+				F854E9F129DF27360027A852 /* Diamond.swift */,
+				F8D5B88229DD6582001DE25C /* SetGame.swift */,
+				F8D5B88429DD694E001DE25C /* ThemeOfSetGame.swift */,
+				F8D5B88829DD735B001DE25C /* GameViewModel.swift */,
 				F8D5B87629DD5B27001DE25C /* Assets.xcassets */,
 				F8D5B87829DD5B27001DE25C /* Preview Content */,
 			);
-			path = Set;
+			path = SetGame;
 			sourceTree = "<group>";
 		};
 		F8D5B87829DD5B27001DE25C /* Preview Content */ = {
@@ -70,9 +88,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F8D5B86E29DD5B25001DE25C /* Set */ = {
+		F8D5B86E29DD5B25001DE25C /* SetGame */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F8D5B87D29DD5B27001DE25C /* Build configuration list for PBXNativeTarget "Set" */;
+			buildConfigurationList = F8D5B87D29DD5B27001DE25C /* Build configuration list for PBXNativeTarget "SetGame" */;
 			buildPhases = (
 				F8D5B86B29DD5B25001DE25C /* Sources */,
 				F8D5B86C29DD5B25001DE25C /* Frameworks */,
@@ -82,9 +100,9 @@
 			);
 			dependencies = (
 			);
-			name = Set;
+			name = SetGame;
 			productName = Set;
-			productReference = F8D5B86F29DD5B25001DE25C /* Set.app */;
+			productReference = F8D5B86F29DD5B25001DE25C /* SetGame.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -102,7 +120,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F8D5B86A29DD5B25001DE25C /* Build configuration list for PBXProject "Set" */;
+			buildConfigurationList = F8D5B86A29DD5B25001DE25C /* Build configuration list for PBXProject "SetGame" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,7 +133,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F8D5B86E29DD5B25001DE25C /* Set */,
+				F8D5B86E29DD5B25001DE25C /* SetGame */,
 			);
 		};
 /* End PBXProject section */
@@ -137,8 +155,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8D5B87529DD5B25001DE25C /* ContentView.swift in Sources */,
+				F8D5B87529DD5B25001DE25C /* SetGameView.swift in Sources */,
+				F8D5B88529DD694E001DE25C /* ThemeOfSetGame.swift in Sources */,
 				F8D5B87329DD5B25001DE25C /* SetApp.swift in Sources */,
+				F8D5B88329DD6582001DE25C /* SetGame.swift in Sources */,
+				F854E9F229DF27360027A852 /* Diamond.swift in Sources */,
+				F8D5B88929DD735B001DE25C /* GameViewModel.swift in Sources */,
+				F8D5B88729DD6C5B001DE25C /* CardView.swift in Sources */,
+				F8D5B88129DD64DF001DE25C /* AspectVGrid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,21 +290,26 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Set/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SetGame/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.fish.yzb.Set;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fish.yzb.SetGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -294,21 +323,26 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Set/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SetGame/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.fish.yzb.Set;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fish.yzb.SetGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -318,7 +352,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F8D5B86A29DD5B25001DE25C /* Build configuration list for PBXProject "Set" */ = {
+		F8D5B86A29DD5B25001DE25C /* Build configuration list for PBXProject "SetGame" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F8D5B87B29DD5B27001DE25C /* Debug */,
@@ -327,7 +361,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F8D5B87D29DD5B27001DE25C /* Build configuration list for PBXNativeTarget "Set" */ = {
+		F8D5B87D29DD5B27001DE25C /* Build configuration list for PBXNativeTarget "SetGame" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F8D5B87E29DD5B27001DE25C /* Debug */,
