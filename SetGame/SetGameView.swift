@@ -26,26 +26,32 @@ struct SetGameView: View {
             HStack(alignment: .bottom) {
                 Spacer()
                 Button("开始新游戏", action: { game.newGame() })
-                    .font(.title)
+                    .font(.title2)
                     .buttonStyle(.bordered)
                     .buttonBorderShape(.roundedRectangle)
-                Spacer()
-                Button("发三张牌", action: {
+                    .frame(maxWidth: .infinity)
+                Spacer(minLength: 0)
+                Button("发三张牌(\(game.countOfRemainingCard))", action: {
                     game.dealCards()
 //                    DispatchQueue.main.async {
 //                        self.viewId += 1
 //                    }
                 })
-                .font(.title)
+                .frame(maxWidth: .infinity)//MARK: - 剩余卡片数量变化，导致按钮大小变化，未解决
+                .font(.title2)
                 .buttonStyle(.bordered)
                 .buttonBorderShape(.roundedRectangle)
-                .disabled(game.isAllCardsDealed())
+                .disabled(game.allCardDealt)
                 Spacer()
             }
 //            .edgesIgnoringSafeArea(.bottom)
             .padding(.bottom, -15.0)
-            
         }
+    }
+    
+    
+    private func font(in size: CGSize) -> Font {
+        Font.system(size: min(size.width, size.height) * 0.75)
     }
 }
 
@@ -87,6 +93,6 @@ struct ContentView_Previews: PreviewProvider {
         
         SetGameView(game: game)
             .preferredColorScheme(.dark)
-        SetGameView(game: game)
+//        SetGameView(game: game)
     }
 }

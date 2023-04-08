@@ -23,24 +23,31 @@ class GameViewModel: ObservableObject {
         }
         return tempThemes
     }()
-    
     static func createSetGame(with themes: Array<ThemeOfSetGame>) -> SetGame<ThemeOfSetGame> {
         SetGame(numberOfCardsShouldBeCreated: themes.count, createContent: { index in
             themes[index]
         })
     }
-    
     @Published var model = createSetGame(with: GameViewModel.themes)
-     
     var cards: Array<Card> {
-        return model.cardsOnDesk
+        model.cards.filter({ $0.isDealed == true })
+    }
+    var countOfRemainingCard: Int {
+        model.countOfRemainingCard
+    }
+    var allCardDealt: Bool {
+        model.countOfRemainingCard < 1
     }
     
     init() {
         desktopInitial()
     }
     
-    //MARK: - intent(s)
+    func isSelected(_ card: Card) -> Bool {
+        model.isSelected(card)
+    }
+    
+    //MARK: - 对模型的操作
     private func desktopInitial() {
         model.dealCards(12)
     }
@@ -56,14 +63,6 @@ class GameViewModel: ObservableObject {
     func newGame() {
         model = GameViewModel.createSetGame(with: GameViewModel.themes)
         desktopInitial()
-    }
-    
-    func isAllCardsDealed() -> Bool {
-        model.allCardsDealed
-    }
-
-    func isSelected(_ card: Card) -> Bool {
-        model.isSelected(card)
     }
 }
 
