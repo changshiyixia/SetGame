@@ -9,49 +9,115 @@ import SwiftUI
 
 struct SetGameView: View {
     @ObservedObject var game: GameViewModel
-//    @State private var viewId = 0
+    
+    @Namespace private var dealingNamespace
     
     var body: some View {
-        VStack {
-            AspectVGrid(items: game.cards, aspectRatio: 2/3, content: { card in
-                CardView(card: card, isSelected: game.isSelected(card))
-                    .padding(1)
-                    .onTapGesture {
-                        game.choose(card)
+        ZStack(alignment: .bottom) {
+            gameBody
+            HStack {
+                discardPile
+                Button("开始新游戏", action: {
+                    withAnimation(.easeInOut(duration: CardConstants.dealDuration)) {
+                        game.restart()
                     }
-            })
-            .foregroundColor(.blue)
-            .padding(.horizontal)
-//            .id(viewId)
-            HStack(alignment: .bottom) {
-                Spacer()
-                Button("开始新游戏", action: { game.newGame() })
+                })
                     .font(.title2)
                     .buttonStyle(.bordered)
                     .buttonBorderShape(.roundedRectangle)
                     .frame(maxWidth: .infinity)
-                Spacer(minLength: 0)
-                Button("发三张牌(\(game.countOfRemainingCard))", action: {
-                    game.dealCards()
-//                    DispatchQueue.main.async {
-//                        self.viewId += 1
-//                    }
-                })
-                .frame(maxWidth: .infinity)//MARK: - 剩余卡片数量变化，导致按钮大小变化，未解决
-                .font(.title2)
-                .buttonStyle(.bordered)
-                .buttonBorderShape(.roundedRectangle)
-                .disabled(game.allCardDealt)
-                Spacer()
+                deckBody
             }
-//            .edgesIgnoringSafeArea(.bottom)
+            .frame(height: 30)
+            .padding(.horizontal, 40)
             .padding(.bottom, -15.0)
         }
     }
+   
+//    @State private var dealt = Set<Int>()
+//
+//    private func deal(_ card: GameViewModel.Card) {
+//        dealt.insert(card.id)
+//    }
+//
+//    private func isUndealt(_ card: GameViewModel.Card) -> Bool {
+//        !dealt.contains(card.id)
+//    }
+//    private func dealAnimation(for card: GameViewModel.Card) -> Animation {
+//        var delay = 0.0
+//        if let index = game.cardsOnDesk.firstIndex(where: { $0.id == card.id}) {
+//            delay = Double(index) * (CardConstants.totalDealDuration / Double(game.cardsOnDesk.count))
+//        }
+//        return Animation.easeInOut(duration: CardConstants.dealDuration).delay(delay)
+//    }
     
+    var gameBody: some View {
+        AspectVGrid(
+            items: game.cardsOnDesk,
+            aspectRatio: CardConstants.aspectRatio, content: { card in
+                CardView(card: card, isSelected: game.isSelected(card))
+                    .matchedGeometryEffect(id: card.id, in: dealingNamespace)
+                    .padding(1)
+                    .onTapGesture {
+                        withAnimation(.easeInOut(duration: CardConstants.dealDuration)) {
+                            game.choose(card)
+                        }
+                    }
+                
+            })
+        .foregroundColor(CardConstants.color)
+        .padding(.horizontal)
+        .onAppear {
+            withAnimation(.easeInOut(duration: CardConstants.dealDuration)) {
+                game.dealCards(12)
+            }
+        }
+    }
     
-    private func font(in size: CGSize) -> Font {
-        Font.system(size: min(size.width, size.height) * 0.75)
+    var discardPile: some View {
+        ZStack {
+            ForEach(game.cardsOfMatched) { card in
+                CardView(card: card)
+                    .matchedGeometryEffect(id: card.id, in: dealingNamespace)
+            }
+        }
+        .frame(width: CardConstants.dealWidth, height: CardConstants.dealHeight)
+        .foregroundColor(CardConstants.color)
+        .rotationEffect(Angle(degrees: 90))
+    }
+    
+    private func zIndex(of card: GameViewModel.Card) -> Double {
+        -Double(game.cards.firstIndex(where: { $0.id == card.id }) ?? 0)
+    }
+    
+    var deckBody: some View {
+        ZStack {
+            ForEach(game.cards.filter({ $0.isDealt == false })) { card in
+                CardView(card: card)
+                    .matchedGeometryEffect(id: card.id, in: dealingNamespace)
+                    .zIndex(zIndex(of: card))
+            }
+        }
+        .frame(width: CardConstants.dealWidth, height: CardConstants.dealHeight)
+        .foregroundColor(CardConstants.color)
+        .rotationEffect(Angle(degrees: 90))
+        .onTapGesture {
+            withAnimation(.easeInOut(duration: CardConstants.dealDuration)) {
+                game.dealCards(3)
+            }
+        }
+    }
+    
+//    private func font(in size: CGSize) -> Font {
+//        Font.system(size: min(size.width, size.height) * 0.75)
+//    }
+    
+    private struct CardConstants {
+        static let color = Color.blue
+        static let aspectRatio: CGFloat = 2/3
+        static let dealHeight: CGFloat = 60
+        static let dealWidth: CGFloat = dealHeight * aspectRatio
+        static let dealDuration: Double = 0.5
     }
 }
 

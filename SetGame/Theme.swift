@@ -1,5 +1,5 @@
 //
-//  ThemeOfSetGame.swift
+//  Theme.swift
 //  Set
 //
 //  Created by yuzhongbao on 2023/4/5.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ThemeOfSetGame: Content {
+struct Theme {
     var number: NumberOfPattern
     var shape: ShapeOfPattern
     var shading: ShadingOfPattern
